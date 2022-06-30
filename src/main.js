@@ -1,19 +1,27 @@
-import Vue from 'vue'
+/*
+ * @Author: your name
+ * @Date: 2022-04-04 00:47:25
+ * @LastEditTime: 2022-04-18 01:23:17
+ * @LastEditors: your name
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \vue-company-attendance-system\src\main.js
+ */
+import Vue from "vue";
 
-import 'normalize.css/normalize.css' // A modern alternative to CSS resets
+import "normalize.css/normalize.css"; // A modern alternative to CSS resets
 
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-import locale from 'element-ui/lib/locale/lang/en' // lang i18n
+import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
+// import locale from "element-ui/lib/locale/lang/en"; // lang i18n
 
-import '@/styles/index.scss' // global css
+import "@/styles/index.scss"; // global css
 
-import App from './App'
-import store from './store'
-import router from './router'
+import App from "./App";
+import store from "./store";
+import router from "./router";
 
-import '@/icons' // icon
-import '@/permission' // permission control
+import "@/icons"; // icon
+import "@/permission"; // permission control
 
 /**
  * If you don't want to use mock-server
@@ -23,21 +31,24 @@ import '@/permission' // permission control
  * Currently MockJs will be used in the production environment,
  * please remove it before going online ! ! !
  */
-if (process.env.NODE_ENV === 'production') {
-  const { mockXHR } = require('../mock')
-  mockXHR()
-}
+// if (process.env.NODE_ENV === "production") {
+//   const { mockXHR } = require("../mock");
+//   mockXHR();
+// }
 
 // set ElementUI lang to EN
-Vue.use(ElementUI, { locale })
+// Vue.use(ElementUI, { locale })
 // 如果想要中文版 element-ui，按如下方式声明
-// Vue.use(ElementUI)
+Vue.use(ElementUI);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+
+//事件总线
+Vue.prototype.$bus = new Vue();
 
 new Vue({
-  el: '#app',
+  el: "#app",
   router,
   store,
-  render: h => h(App)
-})
+  render: (h) => h(App),
+});

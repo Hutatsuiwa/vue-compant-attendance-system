@@ -1,19 +1,29 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import getters from './getters'
-import app from './modules/app'
-import settings from './modules/settings'
-import user from './modules/user'
+import Vue from "vue";
+import Vuex from "vuex";
+import getters from "./getters";
+import app from "./modules/app";
+import settings from "./modules/settings";
+import user from "./modules/user";
+import permission from "./modules/permission";
+import staff from "./modules/staff";
+import department from "./modules/department";
+import leave from "./modules/leave";
+import attendance from "./modules/attendance";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 const store = new Vuex.Store({
   modules: {
     app,
     settings,
-    user
+    user,
+    permission,
+    staff,
+    department,
+    leave,
+    attendance,
   },
-  getters
-})
+  getters,
+});
 
-export default store
+export default store;

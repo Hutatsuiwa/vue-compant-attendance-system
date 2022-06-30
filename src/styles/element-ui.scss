@@ -47,3 +47,28 @@
 .el-range-separator {
   box-sizing: content-box;
 }
+
+// 将提示框的最大宽度修正为50%
+.el-tooltip__popper{
+  max-width: 50%;
+}
+
+// 隐藏开始时间与结束时间文字
+.el-time-range-picker__header {
+  display: none;
+}
+
+//修改日历组件
+.el-calendar-table td,
+.el-calendar-table tr td:first-child,
+.el-calendar-table tr:first-child td{
+  border-top: none;
+  border-left: none;
+  border-bottom:none;
+  border-right: none;
+}
+
+//修改头像组件
+.el-avatar{
+  background:none
+}
